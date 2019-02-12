@@ -16,37 +16,13 @@ public class ConsulDiscovery extends ServiceDiscovery {
 	}
 
 	@Override
-	public String getDasboardServiceURI() {
-		return services.discoverServiceURI("dashboardms");
+	public String getCatalogServiceURI() {
+		return services.discoverServiceURI("catalogms");
 	}
 
 	@Override
-	public String getModuleServiceURI() {
-		return services.discoverServiceURI("modulems");
+	public String getCartServiceURI() {
+		return services.discoverServiceURI("cartms");
 	}
-
-	@Override
-	public String getPayrollServiceURI() {
-		return services.discoverServiceURI("payrollms");
-	}
-
-	@Override
-	public String getOrgansationServiceURI() {
-		return services.discoverServiceURI("organisationms");
-	}
-
-	@Override
-	public String getSubscriptionServiceURI() {
-		return services.discoverServiceURI("subscriptionms");
-	}
-
-	@Override
-	public String getDepartmentServiceURI() {
-		return services.discoverServiceURI("departmentms");
-	}
-
-	@Override
-	public String getTransactionServiceURI() {
-		return services.discoverServiceURI("transactionms");
-	}
+	
 }
