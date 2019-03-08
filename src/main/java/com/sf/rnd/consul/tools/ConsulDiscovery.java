@@ -24,5 +24,10 @@ public class ConsulDiscovery extends ServiceDiscovery {
 	public String getCartServiceURI() {
 		return services.discoverServiceURI("cartms");
 	}
+
+	@Override
+	public String getClipperServiceURI() {
+		return services.discoverServiceURI("bgcleanupms");
+	}
 	
 }

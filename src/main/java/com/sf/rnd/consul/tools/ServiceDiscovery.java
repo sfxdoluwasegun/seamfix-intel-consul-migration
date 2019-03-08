@@ -11,10 +11,12 @@ public abstract class ServiceDiscovery {
 	private WebTarget userService;
 	private WebTarget catalogService;
 	private WebTarget cartService;
+	private WebTarget BgClipperService;
 
 	public abstract String getUserServiceURI();
 	public abstract String getCatalogServiceURI();
 	public abstract String getCartServiceURI();
+	public abstract String getClipperServiceURI();
 
 	public WebTarget getUserService() {
 
@@ -33,6 +35,12 @@ public abstract class ServiceDiscovery {
 		if (null == cartService)
 			cartService = ClientBuilder.newClient().target(UriBuilder.fromUri(URI.create(getCartServiceURI())).path("/cart").build());
 		return cartService;
+	}
+	
+	public WebTarget getBgClipperService() {
+		if (null == BgClipperService)
+			BgClipperService = ClientBuilder.newClient().target(UriBuilder.fromUri(URI.create(getClipperServiceURI())).path("/bg-cleanup").build());
+		return BgClipperService;
 	}
 
 }
